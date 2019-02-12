@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import axios from 'axios';
+import "./App.css";
 
 class App extends Component {
+  componentDidMount() {
+      axios.get('/hello')
+      .then(res => console.log(res.data.test));
+  }
   render() {
     return (
       <div className="App">
