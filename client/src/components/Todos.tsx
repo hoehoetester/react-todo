@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TodoItem from "./TodoItem";
 
 export interface ITodosProps {
   todos: any;
@@ -6,8 +7,8 @@ export interface ITodosProps {
 
 class Todos extends Component<ITodosProps> {
   render() {
-    const todoList = this.props.todos.map((x: any) => (
-      <li key={x.id}>{x.title}</li>
+    const todoList = this.props.todos.map((todo: any) => (
+      <TodoItem key={todo.id} todo={todo} />
     ));
 
     return <div>{todoList}</div>;
